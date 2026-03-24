@@ -1,0 +1,20 @@
+package tp1;
+//Escriba un método de clase que dado un número n devuelva un nuevo arreglo de tamaño n
+//con los n primeros múltiplos enteros de n mayores o iguales que 1
+
+
+import java.util.Scanner;
+
+public class ej2 {
+	
+	public static int[] generarArreglo(int n){
+		
+		return arreglo;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner n = new Scanner(System.in);
+		generarArreglo(n);
+	}
+
+}

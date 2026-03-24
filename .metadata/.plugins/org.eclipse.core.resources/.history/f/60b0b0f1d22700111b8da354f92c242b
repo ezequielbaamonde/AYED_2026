@@ -1,0 +1,14 @@
+package tp1;
+
+public class Estadistica {
+	int max;
+    int min;
+    double promedio;
+
+    // Constructor para asignar los valores fácilmente
+    public Estadistica(int min, int max, double promedio) {
+        this.max = max;
+        this.min = min;
+        this.promedio = promedio;
+    }
+}

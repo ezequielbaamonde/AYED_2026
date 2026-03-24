@@ -1,0 +1,33 @@
+package tp1;
+
+public class ej1 {
+	//funciones
+	public static void imprimirA(int a, int b){
+		for (int i = a; i <= b; i++) {
+			System.out.println("Número: " + i);
+		}
+	}
+	
+	public static void imprimirB(int a, int b){
+		int i = a;
+		while (i <= b) {
+			System.out.println("Número: " + i);
+			i++;
+		}
+	}
+	
+	public static void imprimirC(int a, int b){
+		
+	}
+	
+	//main
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		imprimirA(1, 20);
+		System.out.println("-----------");
+		imprimirB(1, 20);
+		System.out.println("-----------");
+		imprimirC(1, 20);
+	}
+
+}
