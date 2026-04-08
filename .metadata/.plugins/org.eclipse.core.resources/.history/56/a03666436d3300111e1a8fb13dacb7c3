@@ -1,0 +1,9 @@
+package tp2;
+
+public class RedBinariaLlena {
+	private BinaryTree<Integer> arbol;
+	
+	public int retardoReenvio() {
+		if (th)
+	}
+}

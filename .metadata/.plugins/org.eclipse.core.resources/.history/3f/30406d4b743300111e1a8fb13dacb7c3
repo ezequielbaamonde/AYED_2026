@@ -1,0 +1,12 @@
+package tp2;
+
+public class RedBinariaLlena {
+	private BinaryTree<Integer> arbol;
+	
+	public int retardoReenvio() {
+		if (this.arbol.isEmpty()) return 0;
+		int max = 0;
+		preOrden(arbol, max);
+		return max;
+	}
+}
