@@ -1,0 +1,19 @@
+package tp2;
+import java.util.*;
+
+public class ContadorArbol{
+	private BinaryTree<Integer> arbol;
+	
+	public ArrayList<Integer> numerosPares() {
+		if (arbol.isEmpty()) return;
+		
+		ArrayList<Integer> pares = new ArrayList<>();
+		inOrden(this.arbol, pares);
+		return pares;
+	}
+	
+	public ArrayList<Integer> inOrden(){
+		
+	}
+	}
+}

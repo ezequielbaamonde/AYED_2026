@@ -1,0 +1,8 @@
+package tp2;
+import java.util.*;
+
+public class ContadorArbol {
+	private Integer data;
+	private BinaryTree<Integer> leftChild;   
+	private BinaryTree<Integer> rightChild; 
+}

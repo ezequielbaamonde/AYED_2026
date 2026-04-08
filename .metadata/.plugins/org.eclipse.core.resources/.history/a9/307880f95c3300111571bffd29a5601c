@@ -1,0 +1,13 @@
+package tp2;
+import java.util.*;
+
+public class ContadorArbol{
+	private BinaryTree<Integer> arbol;
+	
+	public ArrayList<Integer> numerosPares() {
+		ArrayList<Integer> pares = new ArrayList<>();
+		
+		return pares;
+	}
+	
+}

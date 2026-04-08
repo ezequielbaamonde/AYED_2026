@@ -1,7 +1,5 @@
 package tp2;
 
-
-
 public class BinaryTree <T> {
 	
 	private T data;
@@ -58,7 +56,8 @@ public class BinaryTree <T> {
 	public boolean isEmpty(){
 		return (this.isLeaf() && this.getData() == null);
 	}
-
+	
+	//Indica si NO tiene hijos.
 	public boolean isLeaf() {
 		return (!this.hasLeftChild() && !this.hasRightChild());
 
@@ -76,22 +75,87 @@ public class BinaryTree <T> {
 		return this.getData().toString();
 	}
 
-	public  int contarHojas() {
-	   
-		return 0;
+	public int contarHojas() {
+		//Pregunto si el árbol está vacio
+		if (this.isEmpty()) {
+			return 0;
+		}
+		
+		//Pregunto si soy hoja
+		if (this.isLeaf()) {
+			return 1;
+		}
+		
+		// Caso recursivo: Sumo las hojas del hijo izquierdo y del derecho
+		int totalHojas = 0;
+		//Hijo Izquierdo
+		if (this.hasLeftChild()) {
+	        totalHojas += this.getLeftChild().contarHojas();
+	    }
+		//Hijo Derecho
+		if (this.hasRightChild()) {
+	        totalHojas += this.getRightChild().contarHojas();
+	    }
+		
+		return totalHojas;
 	}
 		
 		
     	 
     public BinaryTree<T> espejo(){
-		       		  
- 	   return null;
+       if(this.isEmpty()) {
+    	   return new BinaryTree<T>();
+       }
+       
+       //Creamos nodo raíz con el mismo dato que el árbol
+       BinaryTree<T> espejo = new BinaryTree<T>(this.getData());
+       
+       //Si tiene hijo izquierdo, su espejo irá a la DERECHA del nuevo árbol
+       if(this.hasLeftChild()){
+    	   espejo.addRightChild(this.getLeftChild().espejo());
+       }
+       
+     //Si tiene hijo derecho, su espejo irá a la IZQUIERDA del nuevo árbol
+       if(this.hasRightChild()){
+    	   espejo.addLeftChild(this.getRightChild().espejo());
+       }
+       
+ 	   return espejo;
     }
 
 	// 0<=n<=m
 	public void entreNiveles(int n, int m){
-		
-   }
+		if (this.isEmpty()) return;
+
+	    // Creamos la COLA donde iremos marcando los niveles y procesando los hijos del árbol
+		// IMPORTAR la clase QUEUE en el package
+	    Queue<BinaryTree<T>> cola = new Queue<>();
+	    
+	    BinaryTree<T> visito; //Nodo Actual, es un aux
+	    cola.enqueue(this); //Encolamos la raíz
+	    cola.enqueue(null); // Encolamos NULL para marcar fin de nivel
+	    
+	    int nivelActual = 0;
+	    
+	    //Añadimos nivelActual<= ya que solo nos interesa recorrer hasta el límite M
+	    while (!cola.isEmpty() && nivelActual <= m) {
+	        visito = cola.dequeue(); //Guardamos en VISITÓ el primer nodo a evaluar de la cola
+	        
+	        //Si el nodoActual no es la marca de fin de nivel
+	        if (visito != null) {
+	            if (nivelActual >= n && nivelActual <= m) {
+	                System.out.print(visito.getData() + " ");
+	            }
+	            if (visito.hasLeftChild()) cola.enqueue(visito.getLeftChild()); //Encolamos hijo izquierdo
+	            if (visito.hasRightChild()) cola.enqueue(visito.getRightChild()); //Encolamos hijo derecho
+	        } else { //Si es marca de fin
+	            if (!cola.isEmpty()) {
+	                cola.enqueue(null); //Marcamos fin del nivel
+	                nivelActual++; //Subimos al próximo nivel
+	            }
+	        }
+	    } //Fin while
+    }
 		
 }
 

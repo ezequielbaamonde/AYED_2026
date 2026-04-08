@@ -1,0 +1,160 @@
+package tp2;
+
+public class BinaryTree <T> {
+	
+	private T data;
+	private BinaryTree<T> leftChild;   
+	private BinaryTree<T> rightChild; 
+
+	
+	public BinaryTree() {
+		super();
+	}
+
+	public BinaryTree(T data) {
+		this.data = data;
+	}
+
+	public T getData() {
+		return data;
+	}
+
+	public void setData(T data) {
+		this.data = data;
+	}
+	/**
+	 * Preguntar antes de invocar si hasLeftChild()
+	 * @return
+	 */
+	public BinaryTree<T> getLeftChild() {
+		return leftChild;
+	}
+	/**
+	 * Preguntar antes de invocar si hasRightChild()
+	 * @return
+	 */
+	public BinaryTree<T> getRightChild() {
+		return this.rightChild;
+	}
+
+	public void addLeftChild(BinaryTree<T> child) {
+		this.leftChild = child;
+	}
+
+	public void addRightChild(BinaryTree<T> child) {
+		this.rightChild = child;
+	}
+
+	public void removeLeftChild() {
+		this.leftChild = null;
+	}
+
+	public void removeRightChild() {
+		this.rightChild = null;
+	}
+
+	public boolean isEmpty(){
+		return (this.isLeaf() && this.getData() == null);
+	}
+	
+	//Indica si NO tiene hijos.
+	public boolean isLeaf() {
+		return (!this.hasLeftChild() && !this.hasRightChild());
+
+	}
+		
+	public boolean hasLeftChild() {
+		return this.leftChild!=null;
+	}
+
+	public boolean hasRightChild() {
+		return this.rightChild!=null;
+	}
+	@Override
+	public String toString() {
+		return this.getData().toString();
+	}
+
+	public int contarHojas() {
+		//Pregunto si el árbol está vacio
+		if (this.isEmpty()) {
+			return 0;
+		}
+		
+		//Pregunto si soy hoja
+		if (this.isLeaf()) {
+			return 1;
+		}
+		
+		// Caso recursivo: Sumo las hojas del hijo izquierdo y del derecho
+		int totalHojas = 0;
+		//Hijo Izquierdo
+		if (this.hasLeftChild()) {
+	        totalHojas += this.getLeftChild().contarHojas();
+	    }
+		//Hijo Derecho
+		if (this.hasRightChild()) {
+	        totalHojas += this.getRightChild().contarHojas();
+	    }
+		
+		return totalHojas;
+	}
+		
+		
+    	 
+    public BinaryTree<T> espejo(){
+       if(this.isEmpty()) {
+    	   return new BinaryTree<T>();
+       }
+       
+       //Creamos nodo raíz con el mismo dato que el árbol
+       BinaryTree<T> espejo = new BinaryTree<T>(this.getData());
+       
+       //Si tiene hijo izquierdo, su espejo irá a la DERECHA del nuevo árbol
+       if(this.hasLeftChild()){
+    	   espejo.addRightChild(this.getLeftChild().espejo());
+       }
+       
+     //Si tiene hijo derecho, su espejo irá a la IZQUIERDA del nuevo árbol
+       if(this.hasRightChild()){
+    	   espejo.addLeftChild(this.getRightChild().espejo());
+       }
+       
+ 	   return espejo;
+    }
+
+	// 0<=n<=m
+	public void entreNiveles(int n, int m){
+		if (this.isEmpty()) return;
+
+	    // Creamos la COLA donde iremos marcando los niveles y procesando los hijos del árbol
+		// IMPORTAR la clase QUEUE en el package
+	    Queue<BinaryTree<T>> cola = new Queue<>();
+	    
+	    BinaryTree<T> visito; //Nodo Actual, es un aux
+	    cola.enqueue(this); //Encolamos la raíz
+	    cola.enqueue(null); // Encolamos NULL para marcar fin de nivel
+	    
+	    int nivelActual = 0;
+	    
+	    //Añadimos nivelActual<= ya que solo nos interesa recorrer hasta el límite M
+	    while (!cola.isEmpty() && nivelActual <= m) {
+	        visito = cola.dequeue(); //Guardamos en VISITÓ el primer nodo a evaluar de la cola
+
+	        if (visito != null) {
+	            if (nivelActual >= n && nivelActual <= m) {
+	                System.out.print(visito.getData() + " ");
+	            }
+	            if (visito.hasLeftChild()) cola.enqueue(visito.getLeftChild()); //Encolamos hijo izquierdo
+	            if (visito.hasRightChild()) cola.enqueue(visito.getRightChild()); //Encolamos hijo derecho
+	        } else {
+	            if (!cola.isEmpty()) {
+	                cola.enqueue(null);
+	                nivelActual++;
+	            }
+	        }
+	    }
+    }
+		
+}
+
