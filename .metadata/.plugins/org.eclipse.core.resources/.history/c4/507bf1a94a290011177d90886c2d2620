@@ -1,0 +1,34 @@
+package tp1.ejercicio7;
+
+import java.util.*;
+import java.util.Scanner;
+
+public class TestArrayList {
+/*
+ A. Escriba una clase llamada TestArrayList cuyo método main recibe una secuencia de
+ números, los agrega a una lista de tipo ArrayList, y luego de haber agregado todos los
+ números a la lista, imprime el contenido de la misma iterando sobre cada elemento.
+
+
+ B. Si en lugar de usar un ArrayList en el inciso anterior hubiera usado un LinkedList ¿Qué
+	diferencia encuentra respecto de la implementación? Justifique
+		> 
+*/
+	public static void main(String[] args) {
+		List<Integer> numeros = new ArrayList<>();
+		Scanner s = new Scanner(System.in);
+		System.out.println("Ingrese números (ingrese 0 para finalizar): ");
+		int n = s.nextInt();
+		while (n != 0) {
+			numeros.add(n);
+			n = s.nextInt();
+		}
+		/*numeros.add(3);
+		numeros.add(4);
+		numeros.add(5);*/
+		for(int num: numeros) {
+			System.out.println(num);
+		}
+	}
+
+}

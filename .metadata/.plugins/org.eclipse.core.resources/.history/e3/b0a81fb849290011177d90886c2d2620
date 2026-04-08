@@ -1,0 +1,19 @@
+package tp1.ejercicio7;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class TestArrayList {
+/*
+ Escriba una clase llamada TestArrayList cuyo método main recibe una secuencia de
+ números, los agrega a una lista de tipo ArrayList, y luego de haber agregado todos los
+ números a la lista, imprime el contenido de la misma iterando sobre cada elemento.
+
+*/
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<Integer> lista = new ArrayList();
+
+	}
+
+}

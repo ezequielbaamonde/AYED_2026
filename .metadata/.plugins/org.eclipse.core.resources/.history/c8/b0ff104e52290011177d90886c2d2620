@@ -1,0 +1,69 @@
+package tp1.ejercicio7;
+
+import java.util.*;
+import java.util.Scanner;
+
+public class TestArrayList {
+/*
+ A. Escriba una clase llamada TestArrayList cuyo método main recibe una secuencia de
+ números, los agrega a una lista de tipo ArrayList, y luego de haber agregado todos los
+ números a la lista, imprime el contenido de la misma iterando sobre cada elemento.
+
+
+ B. Si en lugar de usar un ArrayList en el inciso anterior hubiera usado un LinkedList ¿Qué
+	diferencia encuentra respecto de la implementación? Justifique
+		> No hay diferencias en la implementación gracias al concepto de Polimorfismo
+		
+ C. ¿Existen otras alternativas para recorrer los elementos de la lista del punto 7a.?
+ 		> Si, se puede hacer un FOR clasico, donde el corte sea "i < numeros.size()"
+ 		> También puede accederse de manera directa sabiendo el tamaño de la lista
+	
+ D. Escriba un método que realice las siguientes acciones:
+	■ cree una lista que contenga 3 estudiantes
+	■ genere una nueva lista que sea una copia de la lista del inciso i
+	■ imprima el contenido de la lista original y el contenido de la nueva lista
+	■ modifique algún dato de los estudiantes
+	■ vuelva a imprimir el contenido de la lista original y el contenido de la nueva lista.
+	■ ¿Cuántas formas de copiar una lista existen? ¿Qué diferencias existen entre
+	ellas?
+*/
+	
+	public static void generarLista(){
+		Estudiante e1 = new Estudiante("23364/4", "Ezequiel", "Baamonde",  45782596, "ezequiel@gmail.com");
+		Estudiante e2 = new Estudiante("23364/5", "Tomas", "Baamonde",  45782597, "tomas@gmail.com");
+		Estudiante e3 = new Estudiante("23364/6", "Raul", "Baamonde",  45782598, "raul@gmail.com");
+		List<Estudiante> alumnos = new ArrayList<>();
+		alumnos.add(e1); alumnos.add(e2); alumnos.add(e3);
+		List<Estudiante> copia = new ArrayList<>(alumnos);
+		//copia.addAll(alumnos);
+		
+		for(Estudiante e: alumnos) {
+			System.out.println(e);
+		}
+		System.out.println("---");
+		for(Estudiante ee: copia) {
+			System.out.println(ee);
+		}
+	}
+	
+	public static void main(String[] args) {
+		List<Integer> numeros = new ArrayList<>();
+		Scanner s = new Scanner(System.in);
+		System.out.println("Ingrese números (Ingrese 0 para finalizar): ");
+		int n = s.nextInt();
+		while (n != 0) {
+			numeros.add(n);
+			n = s.nextInt();
+		}
+		/*numeros.add(3);
+		numeros.add(4);
+		numeros.add(5);*/
+		for(int num: numeros) {
+			System.out.println(num);
+		}
+		
+		//Inciso D.
+		generarLista();
+	}
+
+}
