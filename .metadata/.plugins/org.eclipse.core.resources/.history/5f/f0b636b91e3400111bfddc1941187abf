@@ -1,0 +1,19 @@
+package tp2;
+import java.util.*;
+
+public class Transformacion {
+	private BinaryTree<Integer> arbol;
+	
+	
+	public BinaryTree<Integer> suma(){
+		if (this.arbol.isEmpty() || this.arbol == null) return this.arbol;
+		sumatoria(this.arbol, trans); //Corregir arbol
+		return arbol;
+	}
+	
+	private void sumatoria(BinaryTree<Integer> nodo, BinaryTree<Integer> trans){
+		
+		
+		
+	}
+}

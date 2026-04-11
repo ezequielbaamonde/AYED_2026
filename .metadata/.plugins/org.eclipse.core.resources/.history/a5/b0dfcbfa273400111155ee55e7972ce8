@@ -1,0 +1,19 @@
+package tp2;
+
+public class ProfundidadDeArbolBinario {
+	private BinaryTree<Integer> arbol;
+	
+	public int sumaElementosProfundidad(int p) {
+		int total = 0;
+		if(!this.arbol.isEmpty() && this.arbol != null) {
+			return sumatoria(this.arbol, p, total);
+		}	
+		return total;
+	}
+	
+	private int sumatoria(BinaryTree<Integer> arbol, int p, int total) {
+		
+		
+		return total;
+	}
+}

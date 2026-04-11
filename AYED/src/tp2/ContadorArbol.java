@@ -4,8 +4,8 @@ import java.util.*;
 public class ContadorArbol{
 	private BinaryTree<Integer> arbol;
 	
-	public ArrayList<Integer> numerosParesA() {
-		ArrayList<Integer> pares = new ArrayList<>();
+	public List<Integer> numerosParesA() {
+		List<Integer> pares = new ArrayList<>();
 		
 		// Si no hay árbol, devuelvo la lista vacía
 	    if (this.arbol == null || this.arbol.isEmpty()) {
@@ -15,8 +15,8 @@ public class ContadorArbol{
 		return pares;
 	}
 	
-	public ArrayList<Integer> numerosParesB() {
-		ArrayList<Integer> paresB = new ArrayList<>();
+	public List<Integer> numerosParesB() {
+		List<Integer> paresB = new ArrayList<>();
 		
 		// Si no hay árbol, devuelvo la lista vacía
 	    if (this.arbol == null || this.arbol.isEmpty()) {
@@ -26,7 +26,7 @@ public class ContadorArbol{
 		return paresB;
 	}
 	
-	private void inOrden(BinaryTree<Integer> arbol, ArrayList<Integer> lista){
+	private void inOrden(BinaryTree<Integer> arbol, List<Integer> lista){
 		//Caso base
 		if (arbol == null) return;
 		if (arbol.hasLeftChild()) inOrden(arbol.getLeftChild(), lista);
@@ -34,7 +34,7 @@ public class ContadorArbol{
 		if (arbol.hasRightChild()) inOrden(arbol.getRightChild(), lista);
 	}
 	
-	private void postOrden(BinaryTree<Integer> arbol, ArrayList<Integer> lista){
+	private void postOrden(BinaryTree<Integer> arbol, List<Integer> lista){
 		//Caso base
 		if (arbol == null) return;
 		if (arbol.hasLeftChild()) postOrden(arbol.getLeftChild(), lista);

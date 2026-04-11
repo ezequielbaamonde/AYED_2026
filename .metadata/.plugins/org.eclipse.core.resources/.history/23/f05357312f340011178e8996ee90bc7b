@@ -1,0 +1,49 @@
+package tp2;
+
+public class ProfundidadDeArbolBinario {
+	private BinaryTree<Integer> arbol;
+	
+	public int sumaElementosProfundidad(int p) {
+		if(!this.arbol.isEmpty() && this.arbol != null) {
+			return sumatoria(this.arbol, p);
+		}	
+		return 0;
+	}
+	
+	private int sumatoria(BinaryTree<Integer> nodo, int p) {
+		int sumaTotal=0;
+
+	    // Creamos la COLA donde iremos marcando los niveles y procesando los hijos del árbol
+	    Queue<BinaryTree<Integer>> cola = new Queue<>();
+	    
+	    BinaryTree<Integer> visito; //Nodo Actual, es un aux
+	    cola.enqueue(nodo); //Encolamos la raíz
+	    cola.enqueue(null); // Encolamos NULL para marcar fin de nivel
+	    
+	    int nivelActual = 0;
+	    
+	    //Añadimos nivelActual<= ya que solo nos interesa recorrer hasta el límite M
+	    while (!cola.isEmpty() && nivelActual <= p) {
+	        visito = cola.dequeue(); //Guardamos en el AUX el valor del nodo a sumar
+	        
+	        //Si el nodoActual no es la marca de fin de nivel
+	        if (visito != null) {
+	        	sumaTotal = sumaTotal + visito.getData(); //Sumamos el nodo a nuestro acumulado
+	        	
+	            /*if (nivelActual >= 0 && nivelActual <= p) {
+	                System.out.print(visito.getData() + " "); //Imprimimo el valor del nodo para orientarme
+	            }*/
+	        	
+	            if (visito.hasLeftChild()) cola.enqueue(visito.getLeftChild()); //Encolamos hijo izquierdo
+	            if (visito.hasRightChild()) cola.enqueue(visito.getRightChild()); //Encolamos hijo derecho
+	        } else { //Si es marca de fin = null
+	            if (!cola.isEmpty()) {
+	                cola.enqueue(null); //Marcamos fin del nivel
+	                nivelActual++; //Subimos al próximo nivel
+	            }
+	        }
+	    } //Fin while
+	    
+		return sumaTotal;
+	}
+}

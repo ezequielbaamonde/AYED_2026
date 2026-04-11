@@ -1,0 +1,24 @@
+package tp2;
+
+public class ParcialArboles {
+	private BinaryTree<Integer> arbol;
+	
+	public boolean isLeftTree(int num) {
+		if (this.arbol != null && !this.arbol.isEmpty()) {
+			return recorrer(this.arbol, num);
+		}
+		
+		return false; //Si está vacio el árbol
+	}
+	
+	private boolean recorrer(BinaryTree<Integer> a, int num) {
+		if (a.getData() == num) {
+			
+		}
+		
+		if (a.hasLeftChild()) recorrer(a.getLeftChild(), num);
+		if (a.hasRightChild()) recorrer(a.getRightChild(), num);
+		
+		return false;
+	}
+}
