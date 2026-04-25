@@ -1,0 +1,10 @@
+package tp3;
+import java.util.*;
+
+//a. En este ejercicio entiendo que es preferible optar por un recorrido por niveles.
+// 	  Dado que se debe mantener un promedioMáximo durante el recorrido e irlo comparando por cada nivel, entiendo que es la
+//	 manera más eficiente.
+
+public class AnalizadorArbol {
+	
+}

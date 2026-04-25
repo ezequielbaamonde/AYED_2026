@@ -1,0 +1,12 @@
+package tp3;
+
+import java.util.*;
+public class RecorridosAG {
+
+	public List<Integer> numerosImparesMayoresQuePreOrden (GeneralTree<Integer> a, Integer n){
+		List<Integer> resultado = new LinkedList<Integer>();
+		
+		
+		return resultado;
+	}
+}

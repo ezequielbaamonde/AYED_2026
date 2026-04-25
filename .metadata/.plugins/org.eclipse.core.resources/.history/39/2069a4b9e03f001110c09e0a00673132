@@ -1,0 +1,29 @@
+package tp3;
+
+import java.util.*;
+public class RecorridosAG {
+
+	public List<Integer> numerosImparesMayoresQuePreOrden (GeneralTree<Integer> a, Integer n){
+		List<Integer> resultado = new LinkedList<Integer>();
+		if (a!= null && !a.isEmpty()){
+			resultado = preOrden(a, n, resultado);
+			
+		}
+		
+		return resultado;
+	}
+	
+	private List<Integer> preOrden(GeneralTree<Integer> a, Integer n, List<Integer> res){
+		if (a.getData() % 2 != 0) {
+			res.add(a.getData());
+		}
+		
+		if (a.hasChildren()) {
+			List<GeneralTree<Integer>> hijos = a.getChildren();
+			
+		}
+		
+		
+		return res;
+	}
+}

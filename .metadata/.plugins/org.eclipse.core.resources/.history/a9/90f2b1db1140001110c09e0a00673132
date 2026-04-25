@@ -1,0 +1,34 @@
+package tp3;
+import java.util.*;
+
+//a. En este ejercicio entiendo que es preferible optar por un recorrido por niveles.
+// 	  Se debe mantener un promedioMáximo durante el recorrido e irlo comparando por cada promedio de cadanivel.
+
+public class AnalizadorArbol{
+
+	public double devolverMaximoPromedio(GeneralTree<AreaEmpresa> a) {
+		GeneralTree<AreaEmpresa> visito;
+		Queue<GeneralTree<AreaEmpresa>> cola = new Queue<GeneralTree<AreaEmpresa>>();
+		
+		double proMax=-1;
+		double suma=0;
+		int n=0;
+		cola.enqueue(a);
+		cola.enqueue(null);
+		
+		//Primer nodo de la lista
+		while (!cola.isEmpty()) {
+			visito = cola.dequeue();
+			if(visito != null) {
+				suma= suma + visito.getData();
+				
+			}
+			
+			
+		}
+		
+		return 1.5;
+		
+	}
+
+}

@@ -1,0 +1,114 @@
+package tp3;
+
+import java.util.*;
+public class RecorridosAG {
+	
+	//A.1
+	public List<Integer> numerosImparesMayoresQuePreOrden (GeneralTree<Integer> a, Integer n){
+		List<Integer> resultado = new LinkedList<Integer>();
+		if (a != null && !a.isEmpty()){
+			preOrden(a, n, resultado);
+		}
+		return resultado;
+	}
+	
+	private void preOrden(GeneralTree<Integer> a, Integer n, List<Integer> res){
+		if (a.getData() % 2 != 0 && a.getData() > n) {
+			res.add(a.getData());
+		}
+		
+		if (a.hasChildren()) {
+	        List<GeneralTree<Integer>> hijos = a.getChildren();
+	        for (GeneralTree<Integer> hijo : hijos) { // Podes usar un for-each, es más limpio que el iterator
+	            preOrden(hijo, n, res); // Llamada al método de esta clase
+	        }
+	    }
+		
+	}
+	
+	//A.2
+	public List<Integer> numerosImparesMayoresQueInOrden (GeneralTree <Integer> a, Integer n){
+		List<Integer> resultado = new LinkedList<Integer>();
+		if (a != null && !a.isEmpty()){
+			inOrden(a, n, resultado);
+		}
+		return resultado;
+	}
+	
+	private void inOrden(GeneralTree<Integer> a, Integer n, List<Integer> res) {
+		List<GeneralTree<Integer>> hijos = a.getChildren();
+		//En InOrden primero debemos visitar al primer hijo, la raíz de ese hijo y el restante
+		if (!hijos.isEmpty()) {
+			inOrden(hijos.get(0), n, res); //El primer indice de la lista
+		}
+		
+		if (a.getData() % 2 != 0 && a.getData() > n) {
+			res.add(a.getData());
+		}
+		
+		for (int i=1; i < hijos.size(); i++) {
+			inOrden(hijos.get(i), n, res);
+		}
+		
+	}
+	
+	//A.3
+	public List<Integer> numerosImparesMayoresQuePostOrden (GeneralTree <Integer> a, Integer n){
+		List<Integer> resultado = new LinkedList<Integer>();
+		if (a != null && !a.isEmpty()){
+			postOrden(a, n, resultado);
+		}
+		return resultado;
+		
+	}
+	
+	private void postOrden(GeneralTree<Integer> a, Integer n, List<Integer> res) {
+		if (a.hasChildren()) {
+	        List<GeneralTree<Integer>> hijos = a.getChildren();
+	        for (GeneralTree<Integer> hijo : hijos) { // Podes usar un for-each, es más limpio que el iterator
+	            postOrden(hijo, n, res); // Llamada al método de esta clase
+	        }
+	    }
+		
+		if ((a.getData() % 2) != 0 && a.getData() > n) {
+			res.add(a.getData());
+		}
+	}
+	
+	//A.4
+	public List<Integer> numerosImparesMayoresQuePorNiveles (GeneralTree <Integer> a, Integer n){
+		List<Integer> resultado = new LinkedList<Integer>();
+		if (a != null && !a.isEmpty()){
+			porNiveles(a, n, resultado);
+		}
+		return resultado;
+		
+	}
+	
+	private void porNiveles(GeneralTree<Integer> a, Integer n, List<Integer> res){
+		GeneralTree<Integer> aux; //Nodo AUX
+		
+		Queue<GeneralTree<Integer>> queue = new Queue<GeneralTree<Integer>>(); //Cola de nodos
+		queue.enqueue(a); //Encolo nodo raíz
+		while (!queue.isEmpty()) { //Si la cola no está vacia
+			aux = queue.dequeue(); //Desencolo el nodo de la cola
+			if (aux.getData() % 2 != 0 && aux.getData() > n) {
+				res.add(aux.getData());
+			}
+			List<GeneralTree<Integer>> children = aux.getChildren(); //Obtengo lista de hijos
+			for (GeneralTree<Integer> child: children) { //ForEach por cada hijo
+				queue.enqueue(child); //Encolo los hijos
+			}
+		}
+	}
+	
+	//B. Si tuviera que implementar estos métodos en la clase GeneralTree, utilizara las V.I para el uso del
+	//pasaje de parametros en los llamados a los métodos y así mismo asignaciones/comparaciones
+	/*
+	 * El objeto se referencia a sí mismo usando la palabra clave this.
+	 * Los métodos que antes eran privados en RecorridosAG ahora pueden ser públicos o privados dependiendo de
+	 * el usuario directamente.
+	 * 
+	 * */
+	
+}
