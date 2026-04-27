@@ -1,0 +1,10 @@
+package tp3;
+
+public class RedAguaPotable {
+	private GeneralTree<Character> red;
+	
+	public double minimoCaudal(double caudal) {
+		if
+		
+	}
+}

@@ -1,0 +1,19 @@
+package tp3;
+import java.util.*;
+public class Caminos {
+	private GeneralTree<Integer> arbol;
+	
+	
+	public List<Integer> caminoAHojaMasLejana(){
+		if (arbol != null && !arbol.isEmpty()) {
+			return obtenerMax(arbol);
+		}
+		return null;
+	}
+	
+	private List<Integer> obtenerMax(GeneralTree<Integer> a){
+		//Recorrido preOrden
+		
+		
+	}
+}

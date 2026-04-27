@@ -118,6 +118,33 @@ public class GeneralTree<T>{
 		return maxNodos;
 	}
 	
+	public boolean esAncestro(T a, T b) {
+		GeneralTree<T> nodoA = buscarNodo(this, a);
+		if (nodoA != null && !nodoA.isEmpty()) {
+			for(GeneralTree<T> hijo : nodoA.getChildren()) {
+				if (buscarNodo(hijo, b) != null) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
+	private GeneralTree<T> buscarNodo(GeneralTree<T> a, T valor) {
+		if (a.getData().equals(valor)) {
+			return a;
+		}
+		if (a.hasChildren()) {
+			for (GeneralTree<T> hijo : a.getChildren()) {
+				GeneralTree<T> res = buscarNodo(hijo, valor);
+				if (res != null) {
+					return res;
+				}
+			}
+		}
+		return null;
+	}
+	
 }
 
 

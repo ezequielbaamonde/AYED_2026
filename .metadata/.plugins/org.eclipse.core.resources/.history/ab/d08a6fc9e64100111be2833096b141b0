@@ -1,0 +1,17 @@
+package tp3;
+
+public class RedAguaPotable {
+	private GeneralTree<Character> red;
+	
+	public double minimoCaudal(double caudal) {
+		if (red != null && !red.isEmpty()) {
+			return buscarMinimo(red, caudal);
+		}
+		
+		return 0;
+	}
+	
+	private double buscarMinimo(GeneralTree<Character> a, double caudalAct) {
+		
+	}
+}

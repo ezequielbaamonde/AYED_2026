@@ -1,0 +1,25 @@
+package tp3;
+import java.util.*;
+public class RedAguaPotable {
+	private GeneralTree<Character> red;
+	
+	public double minimoCaudal(double caudal) {
+		if (red != null && !red.isEmpty()) {
+			return buscarMinimo(red, caudal);
+		}
+		
+		return 0;
+	}
+	
+	private double buscarMinimo(GeneralTree<Character> a, double caudalAct) {
+		//Caso base; Nodo hoja = Casa
+		if (a.isLeaf()) {
+			return caudalAct;
+		}
+		//Si "a" no es hoja, debo dividir el caudalActual entre la cantidad de hijos que tengo
+		List<GeneralTree<Character>> hijos = a.getChildren();
+		double caudalHijo = caudalAct / hijos.size();
+		double minTotal = 999999;
+		
+	}
+}
