@@ -1,8 +1,0 @@
-package tp3;
-
-public class Snippet {
-	public static void main(String[] args) {
-		queue.enqueue(tree);
-	}
-}
-
