@@ -15,7 +15,7 @@ public class ParcialArboles {
 			return true;
 		}
 		
-		int minimo = 9999;
+		int minimo = Integer.MAX_VALUE;
 		//Debo recorrer el árbol en PostOrden, desde los hijos hasta el padre para evaluar primero cuál
 		//es el mínimo valor y luego ver si el padre cumple con ese mínimo
 		for (GeneralTree<Integer> hijo: a.getChildren()) {
@@ -32,20 +32,40 @@ public class ParcialArboles {
 	}
 	
 	/*
-	 * Punto 10, consultar... Similar al Ejercicio de AB en NOTION (Árboles Binarios -TP°2 🔢)
-	 * public static List<Integer> resolver(GeneralTree<Integer> arbol){
-		List<Integer> resultado = new LinkedList<Integer>();
+	 * Punto 10, consultar... Similar al Ejercicio de AB en NOTION (Árboles Binarios -TP°2 🔢)*/
+	public static List<Integer> resolverDiez(GeneralTree<Integer> arbol){
+		List<Integer> camino = new LinkedList<Integer>();
+		List<Integer> caminoAct = new LinkedList<Integer>();
+		Maximo m = new Maximo(Integer.MIN_VALUE);
 		if (arbol != null && !arbol.isEmpty()) {
-			return filtrado(arbol, resultado, 0);
+			filtrado(arbol, camino, caminoAct, 0, 0, m);
 		}
-		return resultado;
+		return camino;
 	}
 	
-	private static List<Integer> filtrado(GeneralTree<Integer> a, List<Integer> res, int nivel){
+	private static void filtrado(GeneralTree<Integer> a, List<Integer> res, List<Integer> act, int nivel, int suma, Maximo m){
+		suma+= a.getData()*nivel;
+		if(a.getData().equals(1)) {
+			act.add(a.getData());
+		}
 		
+		if(a.isLeaf()) {
+			if( suma > m.getMax()) {
+				m.setMax(suma);
+				res.clear();
+				res.addAll(act);
+			}		
+		}else {
+			for(GeneralTree<Integer> hijo : a.getChildren()) {
+				filtrado(hijo, res, act, (nivel+1), suma, m);
+			}
+		}
 		
-		return res;
-	}*/
+		// Elimino cada vez que hubo una carga en la lista.
+		if (a.getData().equals(1)) {
+			act.removeLast();
+		}
+	}
 	
 	public static boolean resolver(GeneralTree<Integer> arbol) {
 		if (arbol != null && !arbol.isEmpty()) {

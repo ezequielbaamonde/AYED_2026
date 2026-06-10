@@ -2,9 +2,9 @@
 <section name="Workbench">
 	<section name="java.lang.Class">
 		<item key="selection" value="&#x09;&#x09;numeros.add(3);"/>
+		<item key="replaceBarOpen" value="false"/>
 		<list key="findhistory">
 			<item value="&#x09;&#x09;numeros.add(3);"/>
-			<item value=""/>
 		</list>
 	</section>
 </section>

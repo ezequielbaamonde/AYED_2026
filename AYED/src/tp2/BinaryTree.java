@@ -9,7 +9,7 @@ public class BinaryTree <T> {
 	
 	public BinaryTree() {
 		super();
-	}
+	} 
 
 	public BinaryTree(T data) {
 		this.data = data;
@@ -150,7 +150,7 @@ public class BinaryTree <T> {
 	            if (visito.hasRightChild()) cola.enqueue(visito.getRightChild()); //Encolamos hijo derecho
 	        } else { //Si es marca de fin
 	            if (!cola.isEmpty()) {
-	                cola.enqueue(null); //Ma rcamos fin del nivel
+	                cola.enqueue(null); //Marcamos fin del nivel
 	                nivelActual++; //Subimos al próximo nivel
 	            }
 	        }
