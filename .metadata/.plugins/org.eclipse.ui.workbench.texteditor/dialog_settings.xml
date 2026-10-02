@@ -4,6 +4,8 @@
 		<item key="selection" value="&#x09;&#x09;numeros.add(3);"/>
 		<item key="replaceBarOpen" value="false"/>
 		<list key="findhistory">
+			<item value="result"/>
+			<item value="contain"/>
 			<item value="&#x09;&#x09;numeros.add(3);"/>
 		</list>
 	</section>

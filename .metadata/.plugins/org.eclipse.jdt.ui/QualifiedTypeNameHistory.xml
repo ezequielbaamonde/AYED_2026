@@ -6,4 +6,5 @@
     <fullyQualifiedTypeName name="java.util.LinkedList"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="sun.security.jca.GetInstance"/>
+    <fullyQualifiedTypeName name="tp5.ejercicio1.Edge"/>
 </qualifiedTypeNameHistroy>

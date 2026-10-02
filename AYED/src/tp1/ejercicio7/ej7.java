@@ -1,4 +1,4 @@
-package practica1;
+package tp1.ejercicio7;
 import java.util.*;
 //import java.util.iterable
 
