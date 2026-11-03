@@ -235,3 +235,23 @@
 2026-10-02 19:29:19.514: [INFO] BookmarksLoadDropped droppedNodes=0
 2026-10-02 19:29:19.514: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
 2026-10-02 20:15:44.417: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-03 20:02:43.846: [INFO] CurrentProfilePath: C:\Users\Ezequiel Baamonde\Desktop\UNLP\2do AÑO\AYED\WorkSpace2026\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-11-03 20:02:43.846: [INFO] Profiles total count: 1
+2026-11-03 20:02:43.846: [INFO] Profile: name=Perfil 1 path=C:\Users\Ezequiel Baamonde\Desktop\UNLP\2do AÑO\AYED\WorkSpace2026\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-26T17:59:46.880Z
+2026-11-03 20:02:43.846: [INFO] LastUsedProfileDir: C:\Users\Ezequiel Baamonde\Desktop\UNLP\2do AÑO\AYED\WorkSpace2026\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-11-03 20:02:43.846: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Users\Ezequiel Baamonde\Desktop\UNLP\2do AÑO\AYED\WorkSpace2026\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-26T17:59:46.880Z
+2026-11-03 20:02:43.846: [INFO] OnDoneLoading sync enabled: 0
+2026-11-03 20:02:43.846: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-11-03 20:02:43.846: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-11-03 20:02:43.846: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-03 20:03:17.386: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-03 20:03:31.002: [INFO] CurrentProfilePath: C:\Users\Ezequiel Baamonde\Desktop\UNLP\2do AÑO\AYED\WorkSpace2026\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-11-03 20:03:31.002: [INFO] Profiles total count: 1
+2026-11-03 20:03:31.002: [INFO] Profile: name=Perfil 1 path=C:\Users\Ezequiel Baamonde\Desktop\UNLP\2do AÑO\AYED\WorkSpace2026\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-26T17:59:46.880Z
+2026-11-03 20:03:31.003: [INFO] LastUsedProfileDir: C:\Users\Ezequiel Baamonde\Desktop\UNLP\2do AÑO\AYED\WorkSpace2026\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-11-03 20:03:31.003: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Users\Ezequiel Baamonde\Desktop\UNLP\2do AÑO\AYED\WorkSpace2026\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-26T17:59:46.880Z
+2026-11-03 20:03:31.003: [INFO] OnDoneLoading sync enabled: 0
+2026-11-03 20:03:31.003: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-11-03 20:03:31.003: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-11-03 20:03:31.003: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-03 20:32:21.078: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
